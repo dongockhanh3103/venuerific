@@ -11,16 +11,12 @@ require:
 AllCops:
   Include:
     - 'app/**/*.rb'
-    - 'spec/**/*.rb'
-    - 'gems/**/*.rb'
   Exclude:
     - 'bin/**/*'
     - 'config/**/*'
     - 'db/**/*'
     - 'lib/**/*'
-    - 'spec/spec_helper.rb'
     - 'gems/*/bin/*'
-    - 'gems/**/*.gemspec'
   DefaultFormatter: fuubar
   DisplayCopNames: true
   DisabledByDefault: true
@@ -38,7 +34,7 @@ Layout/AccessModifierIndentation:
   Enabled: true
   EnforcedStyle: indent
 
-Layout/AlignParameters:
+Layout/ParameterAlignment:
   Enabled: true
   EnforcedStyle: with_first_parameter
 
@@ -156,10 +152,6 @@ Style/BlockDelimiters:
   Enabled: true
   EnforcedStyle: braces_for_chaining
 
-Style/BracesAroundHashParameters:
-  Enabled: true
-  EnforcedStyle: context_dependent
-
 Style/ClassMethods:
   Enabled: true
 
@@ -257,10 +249,10 @@ Style/UnlessElse:
 
 ################### Layout ######################
 
-Layout/AlignArray:
+Layout/ArrayAlignment:
   Enabled: true
 
-Layout/AlignHash:
+Layout/HashAlignment:
   Enabled: true
   EnforcedHashRocketStyle: table
   EnforcedColonStyle: table
@@ -314,7 +306,7 @@ Layout/ExtraSpacing:
   AllowForAlignment: true
   ForceEqualSignAlignment: false
 
-Layout/IndentHeredoc:
+Layout/HeredocIndentation:
   Enabled: true
   EnforcedStyle: auto_detection
 
@@ -366,13 +358,17 @@ Layout/SpaceInsideStringInterpolation:
   Enabled: true
   EnforcedStyle: no_space
 
-Layout/Tab:
+Layout/IndentationStyle:
   Enabled: true
 
-Layout/TrailingBlankLines:
+Layout/TrailingEmptyLines:
   Enabled: true
   EnforcedStyle: final_newline
 
+
+Layout/LineLength:
+  Enabled: true
+  Max: 100
 ################### Linting #####################
 
 # Enable all linting options by default
@@ -386,50 +382,29 @@ Lint/UselessAssignment:
 Metrics/AbcSize:
   Enabled: true
   Max: 50
-  Exclude:
-    - '**/spec/**/*.rb'
 
 Metrics/BlockLength:
   Enabled: true
   Max: 40
   CountComments: false
-  Exclude:
-    - 'Guardfile'
-    - 'swagger_doc/**/*'
-    - '**/spec/**/*.rb'
 
 Metrics/BlockNesting:
   Enabled: true
   CountBlocks: false
   Max: 3
-  Exclude:
-    - 'spec/**/*.rb'
 
 Metrics/CyclomaticComplexity:
   Enabled: true
   Max: 12
-  Exclude:
-    - 'spec/**/*.rb'
-
-Metrics/LineLength:
-  Enabled: true
-  Max: 100
-  Exclude:
-  - 'swagger_doc/**/*'
-  - 'spec/**/*.rb'
 
 Metrics/ParameterLists:
   Enabled: true
   Max: 5
   CountKeywordArgs: false
-  Exclude:
-    - 'spec/**/*.rb'
 
 Metrics/PerceivedComplexity:
   Enabled: true
   Max: 12
-  Exclude:
-    - 'spec/**/*.rb'
 
 
 #################### Naming #####################
@@ -443,12 +418,6 @@ Naming/FileName:
 
 # Enable all performance options by default
 Performance:
-  Enabled: true
-
-#################### Rails ######################
-
-# Enable all Rails options by default
-Rails:
   Enabled: true
 
 ################### Security ####################
@@ -575,8 +544,6 @@ Style/InfiniteLoop:
 
 Style/InlineComment:
   Enabled: true
-  Exclude:
-    - 'spec/**/*.rb'
 
 Style/InverseMethods:
   Enabled: true
@@ -588,9 +555,9 @@ Style/LambdaCall:
   Enabled: true
 
 Style/LineEndConcatenation:
-  Enabled: true;
+  Enabled: true
 
-Style/MethodMissingSuper:
+Lint/MissingSuper:
   Enabled: true
 
 Style/MissingRespondToMissing:
@@ -737,13 +704,13 @@ Style/SymbolLiteral:
 Style/TrivialAccessors:
   Enabled: true
 
-Style/UnneededCapitalW:
+Style/RedundantCapitalW:
   Enabled: true
 
-Style/UnneededInterpolation:
+Style/RedundantInterpolation:
   Enabled: true
 
-Style/UnneededPercentQ:
+Style/RedundantPercentQ:
   Enabled: true
 
 Style/VariableInterpolation:
@@ -840,8 +807,6 @@ RSpec/ExpectOutput:
 RSpec/FilePath:
   Enabled: true
   IgnoreMethods: true
-  Exclude:
-  - 'gems/*/spec/**'
 
 # Checks if there are focused specs.
 RSpec/Focus:
@@ -911,10 +876,6 @@ RSpec/SubjectStub:
 RSpec/VerifiedDoubles:
   Enabled: false
 
-#################### Performance ####################
-# Use `caller(n..n)` instead of `caller`.
-Performance/Caller:
-  Enabled: false
 
 # Use `casecmp` rather than `downcase ==`.
 Performance/Casecmp:
