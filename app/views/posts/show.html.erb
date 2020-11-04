@@ -1,0 +1,25 @@
+<div class="banner-container">
+  <%= image_tag(@post.picture,  class: "banner") %>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="jumbotron full-width">
+
+      <h1 class="display-4">
+          <%= link_to @post.title, root_path %>
+      </h1>
+
+      <p class="lead">
+        <%= @post.updated_date_formater %> by <%= @post.user.email %>
+      </p>
+
+      <hr class="my-4" />
+      <div class="post-content"> 
+        <%= @post.content %>
+      </div>
+      <%= link_to 'Edit', edit_post_path(@post), class: 'btn btn-primary' %>
+      <%= link_to 'Back', posts_path, class: 'btn btn-secondary' %>
+    </div>
+  </div>
+</div>
