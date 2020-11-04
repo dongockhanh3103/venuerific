@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  resources :posts
+  resources :posts do
+    collection do
+      get :search,  to: 'posts#search'
+    end
+  end
+
   get 'about', to: 'pages#about'
   devise_for :users
 

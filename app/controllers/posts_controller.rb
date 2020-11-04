@@ -62,6 +62,14 @@ class PostsController < ApplicationController
     end
   end
 
+  # SEARCH /posts/search?keyword
+  def search
+    # @posts = Post.all.paginate(page: params[:page])
+    @posts = PostOperation::SearchPost.execute(search_params)
+
+    render :index
+  end
+
   private
 
   def set_post
@@ -70,6 +78,10 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :content, :banner, :picture)
+  end
+
+  def search_params
+    params.permit(:keyword, :page).merge!(user: current_user)
   end
 
 end
