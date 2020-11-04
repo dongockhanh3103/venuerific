@@ -1,0 +1,28 @@
+<div class="container">
+  <% @posts.each do |post| %>
+     <div class="row">
+      <div class="card mb-3">
+        <img class="card-img-top" src="<%= url_for post.scale_picture(586, 180) %>%" />
+        <div class="card-body">
+          <h5 class="card-title">
+            <%= link_to post.title, post %>
+          </h5>
+          <p class="card-text">
+            <%= post.truncated_content %>
+          </p>
+          <p class="card-text" >
+            <small class="text-muted">
+              <%= post.updated_date_formater %> by <%= post.user.email %>
+            </small>
+          </p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="digg_pagination">
+      <%= will_paginate @posts, :container => false %>
+    </div>
+  </div>
+</div>
