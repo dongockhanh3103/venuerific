@@ -21,6 +21,7 @@ AllCops:
   DisplayCopNames: true
   DisabledByDefault: true
   UseCache: true
+  NewCops: enable
 
 #################################################
 #
@@ -308,7 +309,6 @@ Layout/ExtraSpacing:
 
 Layout/HeredocIndentation:
   Enabled: true
-  EnforcedStyle: auto_detection
 
 Layout/IndentationConsistency:
   Enabled: true
