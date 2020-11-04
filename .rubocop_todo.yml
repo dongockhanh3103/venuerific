@@ -557,9 +557,6 @@ Style/LambdaCall:
 Style/LineEndConcatenation:
   Enabled: true
 
-Lint/MissingSuper:
-  Enabled: true
-
 Style/MissingRespondToMissing:
   Enabled: true
 
