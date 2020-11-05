@@ -18,6 +18,7 @@ Go to: https://venuerific.herokuapp.com/
   - [X] CURD Posts
   - [X] Authorize Posts
   - [X] Search Posts
+  - [X] Pagination Post
 
 ## Unit Test
   - [X] Controller
