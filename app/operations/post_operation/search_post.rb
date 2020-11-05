@@ -4,11 +4,11 @@ module PostOperation
   class SearchPost < BaseOperation
 
     # @param [Hash] params The search parameters
-    # ex: { keyword: 'post', page: 1, user: user }
+    # ex: { keyword: 'post', page: 1 }
     def initialize(params)
       super()
+
       @keyword = params[:keyword]
-      @user = params[:user]
       @page = params[:page]
       @queries = []
       @values = []
@@ -37,9 +37,7 @@ module PostOperation
     end
 
     def scope
-      return Post.all if @user.nil? || @user.admin
-
-      Post.where(user_id: @user.id)
+      Post.all
     end
 
   end
