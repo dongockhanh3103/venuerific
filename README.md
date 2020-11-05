@@ -3,6 +3,10 @@ Venuerific Assignment
 ## Usage
 
 Go to: https://venuerific.herokuapp.com/
+Default:
+  - Email: admin@gmail.com
+  - Password: admin123
+  - Role: Admin
 
 ## Feature
 1. User
