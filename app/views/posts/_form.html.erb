@@ -3,13 +3,13 @@
 
   <div class="form-inputs">
     <h5>Title</h5>
-    <%= f.text_field :title, class: "form-control string" %>
+    <%= f.text_field :title, class: "form-control string", required: true %>
     <h5 class="pt-2">Picture</h5>
-    <%= f.file_field :picture %>
+    <%= f.file_field :picture, required: true %>
     <h5 class="pt-2">Banner</h5>
-    <%= f.file_field :banner %>
+    <%= f.file_field :banner, required: true %>
     <h5 class="pt-2">Content</h5>
-    <%= f.rich_text_area :content %>
+    <%= f.rich_text_area :content, required: true %>
   </div>
 
   <div class="form-actions pt-2">
