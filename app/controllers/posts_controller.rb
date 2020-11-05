@@ -78,7 +78,7 @@ class PostsController < ApplicationController
   end
 
   def search_params
-    params.permit(:keyword, :page).merge!(user: current_user)
+    params.permit(:keyword, :page)
   end
 
   def authorize!

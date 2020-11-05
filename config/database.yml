@@ -7,7 +7,6 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  host:  <%= ENV['POSTGRES_HOST'] %>
-  database: <%= ENV['POSTGRES_DB'] %>
-  username: <%= ENV['POSTGRES_USER'] %>
-  password: <%= ENV['POSTGRES_PASSWORD'] %>
+  database: venuerific_test
+  username: admin
+  password: root

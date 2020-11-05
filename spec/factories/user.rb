@@ -1,9 +1,9 @@
-# FactoryBot.define do
-#   factory :user do
-#     sequence :email do |n|
-#       "person#{n}@example.com"
-#     end
+FactoryBot.define do
+  factory :user do
+    sequence :email do |n|
+      "person#{n}@example.com"
+    end
 
-#     sequence :email
-#   end
-# end
+    password { '123456' }
+  end
+end
