@@ -1,8 +1,6 @@
 # VENUERIFIC
-
-Foobar is a Python library for dealing with word pluralization.
-
-## Installation
+Venuerific Assignment
+## Usage
 
 Go to: https://venuerific.herokuapp.com/
 
