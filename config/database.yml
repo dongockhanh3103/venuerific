@@ -1,12 +1,18 @@
+default: &default
+  adapter:  postgresql
+  encoding: unicode
+  host:     localhost
+  username: admin
+  password: root
+
 development:
-  adapter: postgresql
-  encoding: unicode
+  <<: *default
   database: venuerific
-  username: admin
-  password: root
-test:
-  adapter: postgresql
-  encoding: unicode
+
+production:
+  <<: *default
   database: venuerific_test
-  username: admin
-  password: root
+
+test:
+  <<: *default
+  database: <%= ENV['DATABASE_URL'] %>
