@@ -14,6 +14,7 @@ Default:
   - [X] Have 2 roles includes admin and regular user. Admins can manages all posts and Regular users just manages their posts.
   - [X] Update Password
   - [X] Sign in with session
+  - [X] Sign up
   - [X] Sign out
 
 2. Post
